@@ -18,6 +18,7 @@ function App() {
   return (
     <>
       <Navbar/>
+      <div style={{height: "200vh"}}></div>
       {routes}
     </>
   )

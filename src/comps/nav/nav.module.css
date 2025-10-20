@@ -1,6 +1,17 @@
 .nav {
     width: 100%;
-    background-color: black;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transition: background-color 0.2s, box-shadow 0.2s;
+
+    &.scroll {
+        background-color: var(--black);
+        box-shadow: var(--shadow);
+    }
 
     > .content {
         display: flex;
@@ -26,7 +37,7 @@
 
         > .line {
             width: 40px;
-            height: 2px;
+            height: 3px;
             background-color: var(--white);
             transition: transform 0.2s, background-color 0.2s;
         
@@ -45,7 +56,7 @@
         z-index: 91; /* så over navbaren. */
         
         > .line:nth-child(1) {
-            transform: translateY(11px) rotate(45deg);
+            transform: translateY(12px) rotate(45deg);
         }
 
         > .line:nth-child(2) {
@@ -53,7 +64,7 @@
         }
 
         > .line:nth-child(3) {
-            transform: translateY(-11px) rotate(-45deg);
+            transform: translateY(-12px) rotate(-45deg);
         }
     }
 
