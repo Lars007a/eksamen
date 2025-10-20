@@ -1,0 +1,89 @@
+.nav {
+    width: 100%;
+    background-color: black;
+
+    > .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    > .content .logo {
+        height: 50px;
+        width: auto;
+        aspect-ratio: 152/97; /* dimensioner, så det hele passer. Skal have auto på en af dimensionerne, og en anden sat, siden en boks, hvis img tag, så kunne jeg bare lave en af dimensionerne, og auto på den anden. Måske en bedre vej. */
+
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center;
+    }
+
+    > .content > .hamburger {
+        cursor: pointer;
+        display: block; /* så de tager hele linjen. */
+
+        > .line {
+            width: 40px;
+            height: 2px;
+            background-color: var(--white);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .line:has(+.line) {
+            margin-bottom: 7px;
+        }
+    }
+
+    > .content > .hamburger:is(.active) {
+        z-index: 91; /* så over navbaren. */
+
+        > .line {
+            background-color: var(--orange);
+        }
+        
+        > .line:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        > .line:nth-child(2) {
+            opacity: 0; /* elementet er der stadigvæk, i dommen, og tager plads, men bare gennemsigtig */
+        }
+
+        > .line:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+    }
+
+    > .content > .menu {
+        display:none;
+    }
+
+    > .content > .menu.show {
+        display:block;
+        position:fixed;
+        inset: 0;
+        z-index: 90;
+        background-color: var(--black);
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    > .content > .menu > ul {
+        list-style-type: none;
+
+        a {
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        li {
+            font-size: 20px;
+        }
+    }
+
+
+}

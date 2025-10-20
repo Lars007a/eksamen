@@ -1,5 +1,6 @@
 import { useRoutes } from "react-router-dom"
 import Frontpage from "./pages/frontpage"
+import Navbar from "./comps/nav/nav"
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <>
+      <Navbar/>
       {routes}
     </>
   )
