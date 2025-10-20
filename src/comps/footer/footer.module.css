@@ -1,0 +1,103 @@
+.footer {
+    background-color: var(--black);
+
+    padding-block: 15px 0px;
+
+
+    > .socials {
+
+        display: grid;
+        grid-template-rows: repeat(auto-fit, 1fr);
+        gap: 20px;
+
+        > img {
+            display: block; /* skal være block element, så det kan margin inline auto. */
+            height: 75px;
+            width: auto;
+            margin-inline: auto;
+        }
+
+        > p  {
+            text-align: center;
+            color: var(--grey);
+        }
+
+        > ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        > ul a {
+            text-decoration: none;
+        }
+
+        > ul a svg {
+            color: var(--white);
+            height: 30px;
+            width: auto;
+
+            display: block;
+            margin-inline: auto;
+
+            position: relative;
+            top: 50%; /* flytter 50% ned af, relativt til sin basale position, som er i toppen. */
+            transform: translateY(-50%); /* siden den så har sin egen top ved midten, så -50%, så i forhold til sin egen størrelse med translatey, bliver den flyttet med halvdelen af sin egen størrelse. */
+        }
+
+        > ul a {
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            background-color: var(--secondGrey);
+            opacity: 0.45;
+        }
+
+    }
+
+    > .contact {
+        padding-block: 20px 15px;
+
+        > h2 {
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        article {
+            text-align: center;
+        }
+
+        article:has(+ article) {
+            margin-bottom: 15px;
+        }
+
+        article p {
+            color: var(--white);
+        }
+
+        article p:has(+ .grey) {
+            margin-bottom: 8px;
+        }
+
+        article p:is(.grey) {
+            color: var(--secondGrey);
+        }
+    }
+
+    .copyright {
+        border-top: 1px solid var(--secondGrey);
+        
+        padding-block: 20px;
+
+        
+        > p {
+            color: var(--secondGrey);
+            text-align: center;
+            padding-inline: 10px;
+        }
+    }
+}

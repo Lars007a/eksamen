@@ -1,6 +1,7 @@
 import { useRoutes } from "react-router-dom"
 import Frontpage from "./pages/frontpage"
 import Navbar from "./comps/nav/nav"
+import Footer from "./comps/footer/footer"
 
 function App() {
 
@@ -19,7 +20,10 @@ function App() {
     <>
       <Navbar/>
       <div style={{height: "200vh"}}></div>
+      <main>
       {routes}
+      </main>
+      <Footer/>
     </>
   )
 }
