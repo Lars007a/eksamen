@@ -69,6 +69,10 @@ strong {
 
 /* container */
 .container {
-  width: min(calc(100% - 5rem), 1100px); /* hvad end er mindst, bliver værdien der bliver anvendt. */
+  width: min(calc(100% - 3rem), 1100px); /* hvad end er mindst, bliver værdien der bliver anvendt. */
   margin-inline: auto; /* centered */
+}
+
+button, a, input[type="submit"] {
+  cursor: pointer;
 }

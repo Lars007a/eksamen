@@ -61,8 +61,12 @@ export default function Navbar({}) {
 
 
             <div className={`${styles.menu} ${menuActive ? styles.show : ""}`}>
-                <ul>
-                    <li><NavLink>Hej</NavLink></li>
+                <ul className="container">
+                    <li><NavLink>Tjenester</NavLink></li>
+                    <li><NavLink>Trænere</NavLink></li>
+                    <li><NavLink>Priser</NavLink></li>
+                    <li><NavLink>Om os</NavLink></li>
+                    <li><NavLink>Login</NavLink></li>
                 </ul>
             </div>
 
