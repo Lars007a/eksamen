@@ -6,6 +6,8 @@
     right: 0;
     left: 0;
 
+    z-index: 10; /* så over headeren. og content */
+
     transition: background-color 0.2s, box-shadow 0.2s;
 
     &.scroll {
@@ -53,7 +55,7 @@
     }
 
     > .content > .hamburger:is(.active) {
-        z-index: 91; /* så over navbaren. */
+        z-index: 91; /* så over menu'en */
         
         > .line:nth-child(1) {
             transform: translateY(12px) rotate(45deg);
@@ -76,7 +78,7 @@
         display:block;
         position:fixed;
         inset: 0;
-        z-index: 90;
+        z-index: 90; /* så over alt ALT content. */
         background-color: var(--black);
     
         display: flex;

@@ -1,8 +1,8 @@
 import Header from "../comps/header/header";
-import headerImg from "../assets/headers/mainHeader.jpg";
+import p from "../assets/headers/aboutHeader.png";
 
 export default function Frontpage({}) {
     return <>
-    <Header frontpage={true} pic={headerImg}/>
+    <Header frontpage={false} pic={p} title="Om os"/>
     </>
 }

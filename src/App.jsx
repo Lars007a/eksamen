@@ -2,6 +2,7 @@ import { useRoutes } from "react-router-dom"
 import Frontpage from "./pages/frontpage"
 import Navbar from "./comps/nav/nav"
 import Footer from "./comps/footer/footer"
+import About from "./pages/about.jsx";
 
 function App() {
 
@@ -14,12 +15,15 @@ function App() {
       element: <Frontpage/>,
       path: "/home",
     },
+    {
+      element: <About/>,
+      path: "/about",
+    },
   ])
 
   return (
     <>
       <Navbar/>
-      <div style={{height: "200vh"}}></div>
       <main>
       {routes}
       </main>

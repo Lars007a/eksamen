@@ -51,8 +51,7 @@
             height: 50px;
             width: 50px;
             border-radius: 100%;
-            background-color: var(--secondGrey);
-            opacity: 0.45;
+            background-color: rgb(from var(--secondGrey) r g b / 0.45); /* fandt på¨stackoverflow, at en hex color code kunne bruges i rgba sådan her. Bruger ikke opacity, eftersom den impacter text. */
         }
 
     }
