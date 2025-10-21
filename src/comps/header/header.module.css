@@ -19,7 +19,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        opacity: 0.8;
+        opacity: 0.9;
         z-index: -1; /* så bag content. */
     }
 
@@ -36,6 +36,10 @@
         height: 70vh;
     }
 
+    &:is(.frontpage)::after {
+        opacity: 0.5;
+    }
+
     h1 {
         width: calc(100% - 3rem);
         color: var(--white);
@@ -45,6 +49,10 @@
         text-align: center;
         line-height: 1; 
         /* for at fjerne whitespace omkring teksten. Hvis 0, så overlapper, men ingen whitespace, 1 er default, 2 er dobbelt så meget spacing, mellem linjer og above and below textbox. kan også være pixels, 1ch som er en character, 1em som er baseret på font-size, etc, etc. */
+
+        @media(max-width: 400px) {
+            font-size: 40px;
+        }
     }
 
     &.frontpage h1 {
@@ -58,6 +66,10 @@
         color: var(--white);
         font-size: 50px;
         font-weight: 300;
+
+        @media(max-width: 400px) {
+            font-size: 30px;
+        }
     }
 
     &.frontpage p {
@@ -81,6 +93,8 @@
         
         padding-inline: 8px;
         padding-block: 6px;
+
+        transition: box-shadow 0.2s, border 0.2s, background-color 0.2s;
 
 
         @media(max-width: 270px) {
@@ -106,6 +120,12 @@
         img {
             height: 30px;
             width: auto;
+        }
+
+        &:hover {
+            background-color: var(--orange);
+            border: 1px solid var(--orange);
+            box-shadow: var(--shadow);
         }
     }
 }
