@@ -1,0 +1,101 @@
+.button {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center; /* centrere content. I en row. Med et gap. */
+    
+    /* btn styles */
+    background-image: var(--pic);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border:none;
+    outline:none;
+
+    cursor: pointer;
+    border-radius: 365px;
+
+        
+    padding-inline: 16px;
+    padding-block: 10px;
+
+    transition: box-shadow 0.2s, background-color 0.2s;
+
+
+    @media(max-width: 300px) {
+        width: calc(100% - 3rem);
+        margin-inline: auto;
+    }
+
+    span {
+        color: var(--white);
+        font-weight: 400;
+    }
+
+    .icon {
+        height: 30px;
+        width: 40px;
+        background-color: var(--white);
+        display: grid;
+        place-content: center;
+
+        border-radius: 50px;
+    }
+
+    .icon > svg {
+        height: 15px;
+        width: auto;
+        color: var(--orange);
+    }
+
+    &:hover {
+        /* box-shadow: var(--shadow); */
+    }
+
+
+
+    &.transparrent {
+        background: transparent;
+        border: 1px solid #EBEBEB80;
+    }
+    &.transparrent .icon {
+        background: var(--pic);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color:none;
+    }
+
+    &.transparrent .icon > svg {
+        color: var(--white);
+    }
+
+    &.transparrent:hover {
+        background: var(--pic);
+        border: 1px solid var(--orange);
+    }
+
+    &.transparrent:hover .icon {
+        background-image:none;
+        background-color: var(--white);
+    }
+
+    &.transparrent:hover .icon > svg {
+        color: var(--orange);
+    }
+
+
+    &.fullWidth {
+        width: 100%;
+    }
+
+    &.top {
+        margin-top: 40px;
+    }
+
+    &.center {
+        margin-inline: auto;
+    }
+}

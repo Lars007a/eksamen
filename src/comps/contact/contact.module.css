@@ -1,0 +1,82 @@
+.contact {
+    padding-block: 20px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        inset: 0;
+        content: ""; /* Ingen tekst */
+        z-index: -1; /* også bag content. Samme sted som billed, men før billedet, så billedet ligger over, med en opacity, så baggrundsfarven her skær iggennem. */
+        background-color: var(--black);
+    }
+
+    &::after {
+        background-image: var(--pic);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+        content: "";
+        
+        position: absolute;
+        inset: 0;
+        opacity: 0.4;
+        z-index: -1;
+    }
+
+
+
+    > .content {
+
+    }
+
+     img {
+        width: 100%;
+        height: auto;
+
+        margin-bottom: 25px;
+
+        @media(min-width: 500px) {
+            width: 350px;
+            margin-inline: auto;
+            display: block;
+        }
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        color: var(--white);
+    }
+
+    form {
+
+        padding-block: 15px;
+
+        input:has(+ input), input:has(+ textarea), textarea:has(+ button) {
+            margin-bottom: 25px;
+        }
+
+        input:is(:not(input[type="submit"])), textarea {
+            width: 100%;
+            outline:none;
+            border:none;
+            padding-block: 15px;
+            padding-inline: 20px;
+            border-radius: 50px;
+        }
+
+        input:is(:not(input[type="submit"])) {
+            background-color: var(--white);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 200px;
+            border-radius: 30px;
+        }
+    }
+}
