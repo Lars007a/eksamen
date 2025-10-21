@@ -79,4 +79,38 @@
             border-radius: 30px;
         }
     }
+
+    @media(min-width: 800px) {
+
+        &::after {
+            background-image: var(--pic2);
+            opacity: 1;
+        }
+
+        img {
+            display:none;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        form {
+            width: 50%;
+        }
+
+        h2 {
+            text-align: start;
+            width: 50%;
+            padding-top: 12px;
+            padding-bottom: 5px;
+        }
+
+        h1 {
+            width: 50%;
+            text-align: start;
+        }
+    }
 }

@@ -1,12 +1,15 @@
 import styles from "./contact.module.css";
 import pic from "../../assets/images/contact_us.png"
 import bc from "../../assets/images/contact_us_background.jpg";
+import bc2 from "../../assets/images/contact_us.jpg";
 import Button from "../button/button";
 
 
 export default function Contact({}) {
-    return <section className={styles.contact} style={{"--pic": `url(${bc})`}}>
-        <div className={`container ${styles.content}`}>
+    return <section className={styles.contact} style={{"--pic": `url(${bc})`, "--pic2": `url(${bc2})`}}>
+        <div className={`container`}>
+            <div className={` ${styles.content}`}>
+
 
         <img src={pic} alt="Biled af en der træner"/>
         <h2 className={`smallTitle`}>Kontakt os</h2>
@@ -20,6 +23,7 @@ export default function Contact({}) {
             <textarea name="msg" placeholder="Besked"></textarea>
             <Button submit={true} text={"Send"} transparrent={true} fullWidth={false} centered={true}/>
         </form>
+        </div>
         </div>
     </section>
 }
