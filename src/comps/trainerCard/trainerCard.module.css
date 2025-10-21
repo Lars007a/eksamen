@@ -1,21 +1,53 @@
 .card {
-    padding-block: 20px;
-    padding-inline: 20px;
+    padding-block: 10px;
+    padding-inline: 10px;
+
+    position: relative;
 
 
     > img {
-        height: 200px;
+        height: 150px;
         width: auto;
         display: block;
         margin-inline: auto;
+        margin-block-end: 30px;
     }
 
     > h2 {
         color: var(--white);
         text-transform: uppercase;
+        text-align: center;
     }
 
     span {
         color: var(--white);
+        display: block;
+        text-align: center;
+    }
+
+    > ul {
+        margin-block-start: 20px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        gap: 15px;
+    }
+
+    > ul li a {
+        background-color: var(--white);
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        place-content: center;
+        display: grid;
+    }
+
+    > ul li a svg {
+        height: 25px;
+        width: auto;
+        color: var(--orange);
     }
 }

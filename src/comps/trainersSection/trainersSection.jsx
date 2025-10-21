@@ -4,6 +4,7 @@ import {useSendGetRequest} from "../../hooks/useSendRequest.jsx";
 import { useEffect } from "react";
 import Spinner from "../spinner/spinner.jsx";
 import MsgBox from "../msgBox/MsgBox.jsx";
+import TrainerCard from "../trainerCard/trainerCard.jsx";
 
 export default function trainersSection({}) {
 
@@ -20,6 +21,9 @@ export default function trainersSection({}) {
             <div className={styles.grid}>
                 {result.loading && <Spinner />}
                 {result.error && <MsgBox margin={true} msg={result.error}/>}
+                {result.data && result.data.map((element) => {
+                    return <TrainerCard obj={element} key={element._id}/>
+                })}
             </div>
         </div>
     </section>

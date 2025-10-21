@@ -21,6 +21,10 @@ export function useSendGetRequest(endpoint) {
             }
             return val.json();
         }).then((val) => {
+            if(val.status != "ok") {
+                throw new Error(val.message);
+            }
+            
             setData(val.data);
         }).catch((error) => {
             setError(error.message);
