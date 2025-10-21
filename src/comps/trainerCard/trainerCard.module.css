@@ -1,0 +1,21 @@
+.card {
+    padding-block: 20px;
+    padding-inline: 20px;
+
+
+    > img {
+        height: 200px;
+        width: auto;
+        display: block;
+        margin-inline: auto;
+    }
+
+    > h2 {
+        color: var(--white);
+        text-transform: uppercase;
+    }
+
+    span {
+        color: var(--white);
+    }
+}

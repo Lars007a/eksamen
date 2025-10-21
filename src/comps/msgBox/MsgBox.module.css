@@ -1,0 +1,23 @@
+.box {
+    width: min(400px, 100%);
+
+    padding-block: 15px;
+    padding-inline: 10px;
+
+    background-color: red;
+
+    box-shadow: var(--shadow);
+
+    border-radius: 12px;
+
+    margin-inline: auto;
+
+    > p {
+        color: var(--white);
+        text-align: center;
+    }
+
+    &:is(.margin) {
+        margin-block: 12px;
+    }
+}
