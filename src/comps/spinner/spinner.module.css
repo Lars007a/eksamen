@@ -14,4 +14,8 @@
   span {
     border-color: var(--white) var(--white) transparent !important;
   }
+
+  &:is(.whitebc) span {
+    border-color: var(--orange) var(--orange) transparent !important;
+  }
 }

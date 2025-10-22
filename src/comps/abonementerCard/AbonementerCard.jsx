@@ -26,6 +26,6 @@ export default function AbonementerCard({obj}) {
             })}
         </div>
 
-        <Button centered={false} fullWidth={false} submit={false} text={"Tilmeld dig nu!"} marginTop={false} transparrent={false}/>
+        <Button centered={true} fullWidth={false} submit={false} text={"Tilmeld dig nu!"} marginTop={false} transparrent={false}/>
     </article>
 }

@@ -11,6 +11,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+
     border:none;
     outline:none;
 
@@ -18,10 +20,13 @@
     border-radius: 365px;
 
         
-    padding-inline: 16px;
+    padding-inline: 12px;
     padding-block: 10px;
 
     transition: box-shadow 0.2s, background-color 0.2s;
+
+    width: 200px;
+    margin-inline: auto;
 
 
     @media(max-width: 300px) {
@@ -92,7 +97,7 @@
     }
 
     &.top {
-        margin-top: 40px;
+        margin-top: 30px;
     }
 
     &.center {

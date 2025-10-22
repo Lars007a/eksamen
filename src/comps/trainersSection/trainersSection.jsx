@@ -15,7 +15,7 @@ export default function trainersSection({}) {
 
     return <section className={styles.sec} style={{"--pic": `url(${bgImg})`}}>
         <div className={`container ${styles.section}`}>
-            <h2 className="smallTitle">Trænere</h2>
+            <h2 className={`smallTitle ${styles.subtitle}`}>Trænere</h2>
             <h1>VORES HOLD AF EKSPERTER</h1>
 
             <div className={styles.grid}>

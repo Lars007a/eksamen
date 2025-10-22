@@ -18,7 +18,7 @@
 
     }
 
-    h2 {
+    .subtitle {
         color: var(--white);
         text-align: center;
     }
@@ -27,6 +27,7 @@
         color: var(--white);
         text-align: center;
         text-transform: uppercase;
+        margin-block: 0px 20px;
     }
 
     .grid {

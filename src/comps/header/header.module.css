@@ -73,8 +73,9 @@
     }
 
     &.frontpage p {
-        width: calc(100% - 3rem);
+        width: min(280px, 100% - 3rem);
         text-align: center;
         color: var(--white);
+        margin-top: 5px;
     }
 }

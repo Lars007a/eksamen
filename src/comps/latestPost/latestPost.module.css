@@ -1,0 +1,35 @@
+.latestPost {
+    padding-block: 20px;
+    background-color: var(--white);
+
+    .subtitle {
+        text-align: center;
+
+    }
+
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .grid {
+        padding-block-start: 30px;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+
+
+        @media(max-width: 350px) {
+            grid-template-columns: 1fr; /* bare en row/column, ting, og ikke minimum 250px. */
+        }
+    
+        @media(max-width: 600px) {
+            > article ~ article { /* select alle artikler, der er siblings af en artikel. */
+                display:none;
+            }
+
+        }
+    }
+
+}
