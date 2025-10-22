@@ -1,0 +1,106 @@
+.sec {
+    padding-block: 30px;
+    position: relative;
+
+
+    &::before {
+
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: var(--pic);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+
+     .content {
+        width: 100%;
+        @media(min-width: 800px) {
+            width: 50%;
+/*             margin-inline-start: 50%;
+ */        }
+    }
+
+    .intro {
+        padding-block-end: 15px;
+    }
+
+    .intro > .subtitle {
+        text-align: center;
+
+        @media(min-width: 800px) {
+            text-align: start;
+        }
+    }
+
+    .intro > h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--white);
+
+        @media(min-width: 800px) {
+            text-align: start;
+        }
+    }
+
+
+    .quoteSec img {
+        width: auto;
+        height: 15px;
+
+        @media(min-width: 700px) {
+            height: 35px;
+        }
+    }
+
+    .quoteSec {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .quoteSec > div {
+        flex: 1;
+        min-width: 0;
+    } /* så swiper ikke overflower, så den tager op hele boksen, tænker jeg, med flex: 1; Ikke 50 50% af parrent, siden kun en har flex: 1; */
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .navigation svg {
+        color: var(--white);
+        height: 30px;
+        width: auto;
+    }
+
+    .navigation div {
+        cursor: pointer;
+        height: 45px;
+        width: 45px;
+        border-radius: 100px;
+        background-color: transparent;
+        border: 1px solid var(--white);
+        display: grid;
+        place-content: center;
+        transition: background-color 0.2s, border 0.2s;
+    }
+
+    .navigation div:hover {
+        background-color: var(--orange);
+        border: 1px solid var(--orange);
+    }
+
+
+}

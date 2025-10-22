@@ -10,7 +10,7 @@
 
     border-radius: 12px;
 
-    margin-inline: auto;
+    margin-inline: 0px;
 
     > p {
         color: var(--white);
@@ -19,5 +19,9 @@
 
     &:is(.margin) {
         margin-block: 12px;
+    }
+
+    &:is(.center) {
+        margin-inline:auto;
     }
 }

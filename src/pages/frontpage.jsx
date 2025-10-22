@@ -4,6 +4,7 @@ import Contact from "../comps/contact/contact";
 import TrainersSection from "../comps/trainersSection/trainersSection";
 import Abonementer from "../comps/abonementer/abonementer";
 import LatestPost from "../comps/latestPost/latestPost.jsx";
+import StatementsSec from "../comps/statementsSec/statementsSec.jsx";
 
 export default function Frontpage({}) {
     return <>
@@ -12,5 +13,6 @@ export default function Frontpage({}) {
     <Abonementer/>
     <Contact/>
     <LatestPost/>
+    <StatementsSec/>
     </>
 }
