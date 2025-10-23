@@ -29,7 +29,7 @@ export default function StatementsSec({}) {
 
 
                 {result.loading == true ? <Spinner margin centered={false}/> :
-                result.error != null ? <MsgBox msg={result.error} margin centered={false}/> :
+                result.error != null ? <div className={styles.boxCon}><MsgBox msg={result.error} margin centered={false}/></div> :
 
 
                 
@@ -59,8 +59,8 @@ export default function StatementsSec({}) {
 
                     </Swiper>
                         <nav className={styles.navigation}>
-                            <div><MdNavigateBefore/></div>
-                            <div><MdNavigateNext/></div>
+                            <div className={styles.prevEl}><MdNavigateBefore/></div>
+                            <div className={styles.nextEl}><MdNavigateNext/></div>
                         </nav>
                     </div>
 

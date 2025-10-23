@@ -1,4 +1,4 @@
-import styles from "./abonementerCard.module.css";
+import styles from "./subcard.module.css";
 import gradient from "../../assets/images/gradientBc.png";
 import { IoIosCheckmark } from "react-icons/io";
 import Button from "../button/button";

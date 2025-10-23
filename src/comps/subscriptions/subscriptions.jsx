@@ -1,10 +1,10 @@
-import { useSendGetRequest } from "../../hooks/useSendRequest";
-import styles from "./abonementer.module.css";
+import { useSendGetRequest } from "../../hooks/useSendRequest.jsx";
+import styles from "./subscriptions.module.css";
 import Spinner from "../spinner/spinner.jsx";
-import MsgBox from "../msgBox/MsgBox";
-import AbonementerCard from "../abonementerCard/AbonementerCard";
+import MsgBox from "../msgBox/MsgBox.jsx";
+import Subcard from "../Subcard/Subcard.jsx";
 
-export default function Abonementer({}) {
+export default function Subs({}) {
 
     const req = useSendGetRequest("/subscriptions");
 
@@ -18,7 +18,7 @@ export default function Abonementer({}) {
                 {req.loading && <Spinner/>}
                 {req.error && <MsgBox msg={req.error} margin={true}/>}
                 {req.data && req.data.map((element) => {
-                    return <AbonementerCard obj={element} key={element._id}/>
+                    return <Subcard obj={element} key={element._id}/>
                 })}
             </div>
         </div>

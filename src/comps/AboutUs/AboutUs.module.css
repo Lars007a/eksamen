@@ -1,0 +1,146 @@
+.aboutus {
+    padding-block: 50px;
+    position: relative;
+
+    @media(min-width: 800px) {
+    }
+
+    &::before {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        content: "";
+        background-color: var(--black);
+
+    }
+
+    &::after {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: var(--bgTwo);
+
+        opacity: 0.6;
+        
+        position: absolute;
+        z-index: -1;
+        content: "";
+        inset: 0;
+        
+        @media(min-width: 800px) {
+            background-image: var(--bgOne);
+        }
+    }
+
+    .content {
+        width: 100%;
+
+        @media(min-width: 800px) {
+            width: 50%;
+            margin-inline-start: 50%;
+        }
+    }
+
+    .subtitle {
+        text-align: center;
+        
+        @media(min-width: 800px) {
+            text-align: start;
+        }
+    }
+
+    header h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--white);
+
+        @media(min-width: 800px) {
+            text-align: start;
+        }
+    }
+
+    header img {
+        width: min(100%, 200px);
+
+        display: block;
+        margin-inline: auto;
+
+        margin-bottom: 20px;
+
+        @media(min-width: 800px) {
+            display:none;
+        }
+    }
+
+    p {
+        margin-block-start: 20px;
+        text-align: center;
+        color: var(--white);
+        font-weight: 300;
+
+        @media(min-width: 800px) {
+            text-align: start;
+        }
+    }
+
+    .grid {
+        margin-block-start: 35px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        margin-block-end: 30px;
+        row-gap: 20px;
+    }
+
+    .grid > div {
+    }
+
+    .grid div h2 {
+        line-height: 0.8;
+        color: var(--orange);
+        font-weight: 500;
+        text-align: start;
+
+        @media(max-width: 550px) {
+            font-size: 28px;
+        }
+    }
+
+    .grid div h4 {
+        color: var(--white);
+        font-weight: 500;
+        text-align: start;
+
+        @media(max-width: 550px) {
+            font-size: 22px;
+        }
+
+        @media(max-width: 300px) {
+            font-size: 18px;
+        }
+    }
+
+    .grid > div:nth-child(even) {
+
+        @media(max-width: 800px) {
+
+            h2 {
+                text-align: end;
+            }
+            
+            h4 {
+                text-align: end;
+            }
+        }
+    }
+
+    .btnCon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        @media(min-width: 800px) {
+            display: block; /* så knappen ikke er center på desktop. */
+        }
+    }
+
+}
