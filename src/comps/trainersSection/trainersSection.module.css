@@ -14,6 +14,11 @@
         z-index: -1; /* bag content */
     }
 
+    &:is(.otherPage)::after {
+        background-image: none;
+        background-color: var(--white);
+    }
+
     > .content {
 
     }
@@ -21,6 +26,10 @@
     .subtitle {
         color: var(--white);
         text-align: center;
+    }
+
+    &:is(.otherPage) .subtitle {
+        color: var(--orange);
     }
 
     h1 {
@@ -32,12 +41,16 @@
 
     .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
 
-        @media(max-width: 300px) {
+        @media(max-width: 400px) {
             display: flex;
             flex-direction: column;
         }
+    }
+
+    &:is(.otherPage) h1 {
+        color: var(--black);
     }
 }

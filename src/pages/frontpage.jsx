@@ -12,13 +12,15 @@ import Services from "../comps/services/Services.jsx";
 export default function Frontpage({}) {
     return <>
     <Header frontpage={true} pic={headerImg}/>
-    <TrainersSection/>
-    <Subs/>
-    <Contact/>
-    <LatestPost/>
-    <StatementsSec/>
     <Exercises/>
     <AboutUs/>
     <Services/>
+    <StatementsSec/>
+    <Subs/>
+    <TrainersSection frontpage/>
+    <Contact/>
+    <LatestPost/>
+
+
     </>
 }

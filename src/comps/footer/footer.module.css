@@ -1,28 +1,80 @@
 .footer {
     background-color: var(--black);
 
-    padding-block: 15px 0px;
+    padding-block: 30px 0px;
 
 
-    > .socials {
+
+    @media(min-width: 800px) {
+
+        > .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            align-items:stretch;
+
+            padding-block: 0px 20px;
+        }
+    }
+
+    .quickNav {
+        display: none;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        h2 {
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        ul li a {
+            color: var(--white);
+            transition: color 0.2s;
+
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+
+            &:hover {
+                color: var(--orange);
+            }
+        }
+
+        @media(min-width: 800px) {
+            display: flex;
+        }
+    }
+
+
+     .socials {
 
         display: grid;
         grid-template-rows: repeat(auto-fit, 1fr);
         gap: 20px;
 
-        > img {
+         img {
             display: block; /* skal være block element, så det kan margin inline auto. */
             height: 75px;
             width: auto;
             margin-inline: auto;
         }
 
-        > p  {
+         p  {
             text-align: center;
             color: var(--grey);
         }
 
-        > ul {
+         ul {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -30,11 +82,11 @@
             gap: 12px;
         }
 
-        > ul a {
+         ul a {
             text-decoration: none;
         }
 
-        > ul a svg {
+         ul a svg {
             color: var(--white);
             height: 30px;
             width: auto;
@@ -51,7 +103,7 @@
             }
         }
 
-        > ul a {
+         ul a {
             height: 50px;
             width: 50px;
             border-radius: 100%;
@@ -65,8 +117,12 @@
 
     }
 
-    > .contact {
-        padding-block: 20px 15px;
+     .contact {
+        padding-block: 30px 20px;
+
+        @media(min-width: 800px) {
+            padding-block: 0px;
+        }
 
         > h2 {
             text-transform: uppercase;

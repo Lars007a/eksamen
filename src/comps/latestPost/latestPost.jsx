@@ -21,7 +21,7 @@ export default function LatestPost({}) {
 
         const newArray = [...result.data]; /* lav en copy af alle blog indlæg arrayen. */
 
-        newArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)); //sortere arrayen, så vi får dem i rækkefølge.
+        newArray.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); //sortere arrayen, så vi får dem i rækkefølge.
 
         setToShow(newArray.slice(0, 3)); /* sæt den array der vises på siden, til at være de første tre elementer fra arrayen. */
 

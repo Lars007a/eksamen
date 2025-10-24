@@ -1,3 +1,4 @@
+import { useLocalStorage } from "@uidotdev/usehooks";
 import { useState, useEffect } from "react";
 
 export function useSendGetRequest(endpoint) {
@@ -35,4 +36,45 @@ export function useSendGetRequest(endpoint) {
 
 
     return {data, error, loading, get} /* return state variablerne, samt funktionen, der opdater state variablerne ved at sende en ny request. */
+}
+
+export function useSendDataRequest() {
+
+    const apiUrl = "http://127.0.0.1:3042";
+    const [user, setUser] = useLocalStorage("user", null);
+
+    //Funktion til at sende json data.
+    function sendJson(endpoint, body, method) {
+
+        const promise = fetch(`${apiUrl}/${endpoint}`, {
+            method: method,
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": user != null ? `Bearer ${user?.token}` : null,
+            },
+            body: body,
+        }).then((val) => {
+            return val.json();
+        });
+
+        return promise;
+    }
+
+    //Funktion til at sende formdata.
+    function sendForm(endpoint, body, method) {
+        const promise = fetch(`${apiUrl}/${endpoint}`, {
+            method: method,
+            headers: {
+                "authorization": user != null ? `Bearer ${user?.token}` : null,
+            },
+            body: body,
+        }).then((val) => {
+            return val.json();
+        });
+
+        return promise;
+    }
+
+    //Retunere funktionerne, så man kan bruge dem, hvor og når man ville.
+    return {sendJson, sendForm}
 }

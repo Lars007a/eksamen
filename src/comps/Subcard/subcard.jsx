@@ -2,6 +2,7 @@ import styles from "./subcard.module.css";
 import gradient from "../../assets/images/gradientBc.png";
 import { IoIosCheckmark } from "react-icons/io";
 import Button from "../button/button";
+import { Link } from "react-router-dom";
 
 export default function AbonementerCard({obj}) {
 
@@ -26,6 +27,8 @@ export default function AbonementerCard({obj}) {
             })}
         </div>
 
+        <Link to={`/pricing`}>
         <Button centered={true} fullWidth={false} submit={false} text={"Tilmeld dig nu!"} marginTop={false} transparrent={false}/>
+        </Link>
     </article>
 }

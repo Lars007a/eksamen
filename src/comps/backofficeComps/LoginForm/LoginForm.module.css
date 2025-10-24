@@ -1,0 +1,107 @@
+.loginSec {
+    padding-block: 30px;
+
+    background-color: var(--white);
+
+    h2 {
+        text-align: center;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        margin-block-end: 30px;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        width: min(100%, 500px);
+
+        margin-inline: auto;
+    }
+
+    form input {
+        padding-block: 10px;
+        padding-inline: 15px;
+
+        outline:none;
+        border: 1px solid var(--black);
+        border-radius: 365px;
+        transition: border 0.2s;
+    }
+
+    form input:focus {
+        border: 1px solid var(--orange);
+    }
+}
+
+
+.btn {    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center; /* centrere content. I en row. Med et gap. */
+    outline:none;
+
+    border: 1px solid var(--black);
+    background-color: transparent;
+
+    cursor: pointer;
+    border-radius: 365px;
+
+        
+    padding-inline: 15px;
+    padding-block: 8px;
+
+    transition: box-shadow 0.2s, background-color 0.2s;
+
+    span {
+        color: var(--black);
+        font-weight: 400;
+    }
+
+    &:hover span {
+        color: var(--white);
+    }
+
+    &:hover {
+        background: var(--pic);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border: 1px solid var(--orange);
+    }
+
+    .icon {
+        height: 30px;
+        width: 40px;
+        display: grid;
+        place-content: center;
+        border-radius: 50px;
+
+        background: var(--pic);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color:none;
+    }
+
+    &:hover .icon {
+        background: none;
+        background-color: var(--white);
+    }
+
+    &:hover .icon > svg {
+        color: var(--orange);
+    }
+
+    .icon > svg {
+        height: 15px;
+        width: auto;
+        color: var(--white);
+    }
+}

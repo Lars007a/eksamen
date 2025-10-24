@@ -1,0 +1,55 @@
+.tableCon {
+    overflow-x: auto; /* scroll, når tabellen bliver for stor. */
+ 
+ 
+ table {
+    width: 100%; /* så den er lige så stor som dens parrent. */
+    border-collapse: collapse; /* så der ikke er et lille mellemrum i tabellen. */
+  }
+
+  table img {
+    height: 50px;
+    width: auto;
+    object-fit: cover; /* bare en generel style for images ikoner i tabellen. */
+  }
+
+  table thead { /* hovedet hvor tabellen har keys fra objekterne i arrayen. */
+    background-color: var(--orange);
+    color: var(--white);
+  }
+
+  th,
+  td {
+    padding: 8px 5px; /* padding top and bottom and left and right. */
+    text-align: left; /* så står i venstre side. */
+  }
+
+  td div {
+  }
+
+  tbody th,
+  tbody td {
+    border: 1px solid var(--black);
+    color: var(--black);
+  }
+
+  tbody svg {
+    height: 20px;
+    width: auto;
+    color: var(--orange);
+    cursor: pointer;
+  }
+
+  td:has(svg) {
+    text-align: center;
+  }
+
+  tbody svg:hover {
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #eee;
+    color: var(--white);
+  }
+}

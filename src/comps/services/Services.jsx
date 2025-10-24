@@ -4,6 +4,7 @@ import { useSendGetRequest } from "../../hooks/useSendRequest";
 import Spinner from "../spinner/spinner";
 import MsgBox from "../msgBox/MsgBox";
 import Button from "../button/button";
+import { Link } from "react-router-dom";
 
 export default function Services({}) {
     
@@ -23,7 +24,7 @@ export default function Services({}) {
         {result.data &&
 
             result.data.map((element) => {
-                return <article className={styles.card}>
+                return <article key={element._id} className={styles.card}>
             <img className={styles.bc} src={element.image} alt="baggrundsbilled"></img>
 
             <div>
@@ -38,9 +39,9 @@ export default function Services({}) {
         </div>
 
         
-            <div className={styles.btn}>
+            <Link to={`/pricing`} className={styles.btn}>
                 <Button text={"Tilmeld dig nu"} centered transparrent={false} />
-            </div>
+            </Link>
 
     </section>
 }

@@ -2,11 +2,32 @@ import styles from "./footer.module.css";
 import logo from "../../assets/icons/logo.png"
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { FaPlay } from "react-icons/fa";
+
 
 
 export default function Footer({}) {
-    return <footer className={styles.footer}>
-            <div className={`container ${styles.socials}`}>
+
+    const [show, setShow] = useState(true); /* om footeren overhovedet bliver vist. */
+    const loc = useLocation(); /* til at se hvilken side, vi er på. */
+
+
+    useEffect(() => { /* til at fjerne footeren fra backoffice siden. */
+        if(loc.pathname.includes("/backoffice")) {
+            setShow(false);
+            return;
+        }
+
+        setShow(true);
+    }, [loc.pathname])
+
+
+    return show && <footer className={styles.footer}>
+        <div className={`container ${styles.content}`}>
+
+            <div className={`${styles.socials}`}>
                 <img src={logo} alt="Logo"></img>
                 <p className={styles.grey}>Hos os handler træning om glæde, kvalitet og resultater</p>
 
@@ -25,9 +46,20 @@ export default function Footer({}) {
 
             </div>
         
-            <div className={styles.divider}></div>
 
-            <div className={`container ${styles.contact}`}>
+            <nav className={styles.quickNav}>
+                <h2>Hurtige links</h2>
+                <ul>
+                    <li><Link to={{pathname: `/`, hash: "#top"}}><FaPlay/>Forside</Link></li>
+                    <li><Link to={`/about`}><FaPlay/>Om</Link></li>
+                    <li><Link to={`/services`}><FaPlay/>Tjenester</Link></li>
+                    <li><Link to={`/employees`}><FaPlay/>Trænere</Link></li>
+                    <li><Link to={`/pricing`}><FaPlay/>Priser</Link></li>
+                </ul>
+            </nav>
+
+
+            <div className={`${styles.contact}`}>
                 <h2>Kontakt os</h2>
 
                 <article>
@@ -46,6 +78,7 @@ export default function Footer({}) {
                 </article>
             </div>
 
+            </div>
             <div className={styles.copyright}>
                 <p>Copyright 2025 xtremefitness.dk - All Rights Reserved</p>
             </div>

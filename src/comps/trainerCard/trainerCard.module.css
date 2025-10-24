@@ -50,4 +50,18 @@
         width: auto;
         color: var(--orange);
     }
+
+    &.otherPage {
+        ul li a svg {
+            color: var(--white);
+        }
+
+         ul li a {
+            background-color: var(--orange);
+        }
+
+        span, h2 {
+            color: var(--black);
+        }
+    }
 }

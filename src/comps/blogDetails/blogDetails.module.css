@@ -1,0 +1,36 @@
+.sec {
+    padding-block: 30px;
+
+    header {
+        margin-bottom: 10px;
+    }
+
+    header img:has(+ h1) {
+        margin-bottom: 25px;
+        width: min(100%, 700px);
+        display: block;
+        margin-inline: auto;
+    }
+
+    header h1 {
+        text-align: center;
+    }
+
+    p {
+        width: min(700px, 100%);
+        margin-inline: auto;
+        color: var(--secondGrey);
+        font-weight: 300;
+        line-height: 1.5;
+        letter-spacing: 1px;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+
+    footer p {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}

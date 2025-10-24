@@ -3,8 +3,8 @@ import styles from "./trainerCard.module.css";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 
-export default function TrainerCard({obj}) {
-    return <article className={styles.card}>
+export default function TrainerCard({obj, frontpage}) {
+    return <article className={`${styles.card} ${frontpage == false && styles.otherPage}`}>
         <img src={obj.image}  alt={`Billed af træner ${obj.name}`} />
         <h2>{obj.name}</h2>
         <span>{obj.area}</span>
