@@ -3,6 +3,7 @@ import bg1 from "../../assets/images/about_us.png";
 import bg2 from "../../assets/images/about_us_background.jpg";
 import aboutPic from "../../assets/images/about_us2.png";
 import Button from "../button/button";
+import { Link } from "react-router-dom";
 
 export default function AboutUs({}) {
     return <section className={styles.aboutus} style={{"--bgOne": `url(${bg1})`, "--bgTwo": `url(${bg2})`}}>
@@ -37,9 +38,9 @@ export default function AboutUs({}) {
                     </div>
                 </div>
 
-                <div className={styles.btnCon}>
+                <Link to={`/about`} className={styles.btnCon}>
                     <Button centered={false} text={"Læs mere"} fullWidth={false} submit={false} transparrent={true}/>
-                    </div>
+                    </Link>
 
 
             </div>

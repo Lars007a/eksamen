@@ -1,8 +1,9 @@
 .header {
     height: 60vh;
     width: 100%;
-    position: relative;
+    position: relative; /* så billederne baggrund til sort til effekt på baggrunds billedet kan placeres. */
 
+    /* centrere alt */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +24,11 @@
         z-index: -1; /* så bag content. */
     }
 
-    &:is(.frontpage)::before {
+    &:is(.blackNoPic)::after { /* hvis vi gerne bare ville have en sort baggrund, hvis ikke baggrunds billedet. */
+        display:none;
+    }
+
+    &:is(.frontpage)::before, &:is(.blackNoPic)::before { /* på forsiden, samt hvis vi gerne ville have en sort baggrund */
         content: ""; /* ingen tekst content. */
         position: absolute; /* så abselutely relative to nearest position element, som er hele headeren. */
         inset: 0; /* fylder hele boksen */
@@ -32,16 +37,20 @@
         /* dette element er bag content, og er ved billedet, som har opacity, så det har en nice effekt. Before så før billedet, som er after. */
     }
 
-    &:is(.frontpage) {
+    &:is(.blackNoPic)::before { /* hvis vi bare gerne ville have en sort baggrund, giv den noget opacity. */
+        opacity: 0.9;
+    }
+
+    &:is(.frontpage) { /* på forsiden, gør den støre. */
         height: 70vh;
     }
 
-    &:is(.frontpage)::after {
+    &:is(.frontpage)::after { /* giv baggrundsbilledet en opacity, så den sorte baggrund stiger mere iggennem. på forsiden. Højere end på de andre sider. */
         opacity: 0.5;
     }
 
     h1 {
-        width: calc(100% - 3rem);
+        width: 100%;
         color: var(--white);
         font-size: 60px;
         font-weight: 800;
@@ -55,12 +64,8 @@
         }
     }
 
-    &.frontpage h1 {
-
-    }
-
     &.frontpage h2 {
-        width: calc(100% - 3rem);
+        width: 100%;
         text-transform: uppercase;
         text-align: center;
         color: var(--white);
@@ -72,10 +77,60 @@
         }
     }
 
-    &.frontpage p {
-        width: min(280px, 100% - 3rem);
+     p {
+        width: min(100%, 400px);
         text-align: center;
         color: var(--white);
         margin-top: 5px;
+        margin-inline: auto;
     }
+
+    .btn {
+        width:fit-content;
+        padding-block: 20px 0px;
+        margin-inline: auto;
+    }
+
+    
+}
+
+@media(min-width: 750px) {
+.frontpage {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    
+    
+    .boxWithBorder {
+        border-left-color:  var(--white);
+        border-left-width: 3px;
+        border-left-style: solid;
+        
+        h1, h2 {
+            margin-left: 20px;
+            text-align: start;
+        }
+
+        h1 {
+            line-height: 0.8;
+            font-size: 80px;
+        }
+
+        h2 {
+            line-height: 0.9;
+            font-size: 40px;
+        }
+    }
+
+    .boxWithBorder + p {
+        text-align: start;
+        margin-inline: 0;
+        margin-top: 15px;
+    }
+
+    .btn {
+        padding-block: 25px 35px;
+        margin-inline: 0px;
+    }
+}
 }

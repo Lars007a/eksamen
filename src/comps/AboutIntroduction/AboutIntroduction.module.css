@@ -1,0 +1,181 @@
+.sec {
+
+    background-color: var(--white);
+
+    header {
+            padding-block: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        background-color: transparent;
+        gap: 15px;
+
+        @media(max-width: 750px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    header .imgBox {
+        
+    }
+
+    header .imgBox img {
+        width: min(100%, 250px);
+        padding-block: 20px;
+        display: block;
+        margin-inline: auto;
+
+        position: relative;
+        top: 50%; /* bliver pushes 50% af sins parrents størrelse ned, fra sin normale position, siden relativ, og siden i midten af toppen, virker dette. */
+        transform: translateY(-50%); /* -50% relativt til sig selv. */
+    }
+
+    header .textBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+/*         @media(max-width: 750px) {
+            margin-bottom: 10px;
+        } */
+    }
+
+    header .textBox h2 {
+
+        @media(max-width: 750px) {
+            text-align: center;
+        }
+    }
+    
+    header .textBox h1 {
+        text-transform: uppercase;
+        margin-bottom: 5px;
+
+        @media(max-width: 750px) {
+            text-align: center;
+        }
+    }
+
+    header .textBox p {
+        font-weight: 300;
+        width: min(400px, 100%);
+
+        @media(max-width: 750px) {
+            text-align: center;
+            margin-inline: auto;
+        }
+    }
+
+
+
+    .stats {
+        background-image: var(--gradient);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        padding-block: 20px 70px;
+    }
+
+    .stats > .content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+
+        @media(min-width: 750px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+    }
+
+    .stats .info {
+
+
+        > p {
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 500;
+
+            @media(min-width: 350px) {
+                font-size: 20px;
+            }
+
+            @media(min-width: 500px) {
+                font-size: 24px;
+            }
+
+            @media(min-width: 750px) {
+                font-size: 28px;
+            }
+        }
+
+        > p:nth-child(2) {
+            font-weight: 600;
+            font-size: 14px;
+
+            @media(min-width: 350px) {
+                font-size: 16px;
+            }
+
+            @media(min-width: 500px) {
+                font-size: 20px;
+            }
+
+            @media(min-width: 750px) {
+                font-size: 20px;
+            }
+        }
+
+        &:nth-child(even) {
+            text-align: end;
+
+            @media(min-width: 750px) {
+                text-align: start;
+            }
+        }
+    }
+
+
+
+    footer {
+        background-color: transparent;
+    }
+
+    footer .videoCon {
+        width: min(100%, 750px);
+        margin-inline: auto;
+        transform: translateY(-50px);
+        position: relative;
+/*         margin-bottom: -40px;
+ */
+        @media(max-width: 400px) {
+            aspect-ratio: 1/1.2;
+        }
+    }
+
+    footer video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; /* for at få posteren til at cover hele video elementet, som cover hele video containeren. */
+    }
+
+    footer .clickPlay {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translateX(50%) translateY(-50%);
+
+        height: 70px;
+        width: auto;
+
+        @media(max-width: 400px) {
+            height: 40px;
+
+        }
+    }
+}

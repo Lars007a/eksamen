@@ -1,0 +1,25 @@
+.sec {
+    padding-block: 30px;
+
+    a {
+        text-decoration: none;
+        color: var(--orange);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    h1 {
+        line-height: 0.8;
+        margin-bottom: 10px;
+    }
+
+    > .content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

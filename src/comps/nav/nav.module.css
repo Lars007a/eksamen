@@ -37,6 +37,10 @@
         cursor: pointer;
         display: block; /* så de tager hele linjen. */
 
+        @media(min-width: 750px) {
+            display:none;
+        }
+
         > .line {
             width: 40px;
             height: 3px;
@@ -87,21 +91,20 @@
         align-items: center;
     }
 
-    > .content > .menu > ul {
-        list-style-type: none;
+     .content  .menu.show .links {
         display: flex;
         flex-direction: column;
-        gap: 30px;
-
-        @media(max-height: 500px) {
-            gap: 20px;
-        }
+        gap: 22px;
 
         li {
             width: 100%;
             text-align: end;
         }
+        }
 
+    > .content > .menu > ul {
+        list-style-type: none;
+            
         a {
             text-decoration: none;
             color: var(--white);
@@ -111,8 +114,25 @@
             &:hover {
                 color: var(--orange);
             }
+    }
+    }
+}
+@media(min-width: 750px) {
+    
+.nav .content .menu {
+    display: inline-block;   
+        
+        .links {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+            gap: 20px;
+        
+            > li {
+                text-align: start;
+            }
+
         }
     }
-
-
 }
