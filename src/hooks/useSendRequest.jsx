@@ -2,7 +2,7 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 import { useState, useEffect } from "react";
 
 export function useSendGetRequest(endpoint) {
- const apiUrl = "http://127.0.0.1:3042";
+ const apiUrl = "http://167.99.218.24/5000";
 
     const [data, setData] = useState(null); /* data vi får tilbage. */
     const [error, setError] = useState(null); /* fejl, hvis vi får en. */
@@ -40,7 +40,7 @@ export function useSendGetRequest(endpoint) {
 
 export function useSendDataRequest() {
 
-    const apiUrl = "http://127.0.0.1:3042";
+    const apiUrl = "http://167.99.218.24:5000";
     const [user, setUser] = useLocalStorage("user", null);
 
     //Funktion til at sende json data.
