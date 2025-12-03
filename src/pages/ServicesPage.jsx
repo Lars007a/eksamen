@@ -1,4 +1,4 @@
-import ServicesHeader from "../assets/headers/ServicesHeader.png";
+import ServicesHeader from "../assets/headers/servicesHeader.png";
 import Header from "../comps/header/header";
 import LatestPost from "../comps/latestPost/latestPost";
 import Services from "../comps/services/Services";
