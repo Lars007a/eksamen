@@ -2,7 +2,7 @@ import { useSendGetRequest } from "../../hooks/useSendRequest.jsx";
 import styles from "./subscriptions.module.css";
 import Spinner from "../spinner/spinner.jsx";
 import MsgBox from "../msgBox/MsgBox.jsx";
-import Subcard from "../Subcard/Subcard.jsx";
+import Subcard from "../Subcard/subcard.jsx";
 
 export default function Subs({}) {
 
